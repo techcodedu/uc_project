@@ -1,35 +1,45 @@
 import { Link } from "react-router-dom";
-import { Nav, Container } from "react-bootstrap";
+import { Nav, Container, Navbar } from "react-bootstrap";
 
 const Menu = () => {
+  const custom = {
+    backgroundImage: "linear-gradient(-90deg, #a3278f 0%, #e52f50 100%)",
+    margin: "0",
+    padding: "0",
+  };
   return (
-    <Container>
-      <header className="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
-        <Link
-          to="/"
-          className="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none"
-        >
-          Template
-        </Link>
-        <Nav>
+    <Navbar expand="lg" style={custom}>
+      <Container>
+        <Nav className="p-2 mx-auto">
           <ul className="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
             <li>
-              <Link to="/about" className="nav-link px-2 link-secondary">
-                About
+              <Link
+                to="/"
+                className="nav-link px-2 link-secondary text-white  "
+              >
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/inventory"
+                className="nav-link px-2 link-secondary text-white  "
+              >
+                Inventory
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/profile"
+                className="nav-link px-2 link-secondary text-white"
+              >
+                Profile
               </Link>
             </li>
           </ul>
-
-          <div className="col-md-3 text-end">
-            <Link to="/">
-              <button type="button" className="btn btn-outline-primary me-2">
-                Documentation
-              </button>
-            </Link>
-          </div>
         </Nav>
-      </header>
-    </Container>
+      </Container>
+    </Navbar>
   );
 };
 
